@@ -1,5 +1,3 @@
-package hw4.chess;
-
 /**
  * The Square class represents a square on a chessboard.
  */
@@ -16,8 +14,8 @@ public class Square {
 	 * @throws InvalidSquareException if the row or column is not valid
 	 */
 	public Square(char col, char row) throws InvalidSquareException {
-		if (!isValidSquare(col, Character.toLowerCase(row))) {
-			throw new InvalidSquareException(String.valueOf(col) + Character.toLowerCase(row));
+		if (!isValidSquare(row, Character.toLowerCase(col))) {
+			throw new InvalidSquareException(String.valueOf(Character.toLowerCase(col)) + row);
 		}
 		this.col = Character.toLowerCase(col);
 		this.row = row;
@@ -72,7 +70,7 @@ public class Square {
 	 * @return a string representation of the square
 	 */
 	public String toString() {
-		return row + Character.toString(col);
+		return col + Character.toString(row);
 	}
 
 	/**

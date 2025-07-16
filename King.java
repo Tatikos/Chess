@@ -1,5 +1,3 @@
-package hw4.chess;
-
 import java.util.ArrayList;
 
 /**
@@ -51,7 +49,7 @@ public class King extends Piece {
 
 			if (newCol >= 'a' && newCol <= 'h' && newRow >= '1' && newRow <= '8') {
 				try {
-					Square zaza = new Square(newRow,newCol);
+					Square zaza = new Square(newCol, newRow);
 					attackedSquares.add(zaza);
 				} catch (InvalidSquareException e) {
 					e.printStackTrace();

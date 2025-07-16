@@ -1,5 +1,3 @@
-package hw4.chess;
-
 import java.util.ArrayList;
 /**
  * The Knight class extends the Piece class and represents a knight in the game of chess.
@@ -41,7 +39,7 @@ public class Knight extends Piece {
             char newCol = (char) (col + colOffsets[i]);
             if (newCol >= 'a' && newCol <= 'h' && newRow >= '1' && newRow <= '8') {
                 try {
-                	Square zaza = new Square(newRow,newCol);
+                	Square zaza = new Square(newCol, newRow);
 					attackedSquares.add(zaza);
                 } catch (InvalidSquareException e) {
                     e.printStackTrace();

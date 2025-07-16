@@ -1,4 +1,3 @@
-package hw4.chess;
 /**
  * The Color enum represents the two possible colors of a piece in the game of chess.
  */

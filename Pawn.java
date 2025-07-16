@@ -1,5 +1,3 @@
-package hw4.chess;
-
 import java.util.ArrayList;
 
 /**
@@ -44,27 +42,23 @@ public class Pawn extends Piece {
 
 		char oneSquareForwardRow = (char) (row + rowOffset);
 		if (oneSquareForwardRow >= '1' && oneSquareForwardRow <= '8') {
-			Square oneSquareForward = null;
 			try {
-				oneSquareForward = new Square(oneSquareForwardRow, col);
-			} catch (InvalidSquareException e) {
+				Square oneSquareForward = new Square(col, oneSquareForwardRow);
+				possibleMoves.add(oneSquareForward);
 
-				e.printStackTrace();
-			}
-			possibleMoves.add(oneSquareForward);
-
-			if ((getColor() == Color.WHITE && row == '2') || (getColor() == Color.BLACK && row == '7')) {
-				char twoSquaresForwardRow = (char) (oneSquareForwardRow + rowOffset);
-				if (twoSquaresForwardRow >= '1' && twoSquaresForwardRow <= '8') {
-					Square twoSquaresForward = null;
-					try {
-						twoSquaresForward = new Square(twoSquaresForwardRow, col);
-					} catch (InvalidSquareException e) {
-
-						e.printStackTrace();
+				if ((getColor() == Color.WHITE && row == '2') || (getColor() == Color.BLACK && row == '7')) {
+					char twoSquaresForwardRow = (char) (oneSquareForwardRow + rowOffset);
+					if (twoSquaresForwardRow >= '1' && twoSquaresForwardRow <= '8') {
+						try {
+							Square twoSquaresForward = new Square(col, twoSquaresForwardRow);
+							possibleMoves.add(twoSquaresForward);
+						} catch (InvalidSquareException e) {
+							e.printStackTrace();
+						}
 					}
-					possibleMoves.add(twoSquaresForward);
 				}
+			} catch (InvalidSquareException e) {
+				e.printStackTrace();
 			}
 		}
 

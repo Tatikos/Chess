@@ -1,5 +1,3 @@
-package hw4.chess;
-
 /**
  * The Piece class is an abstract class that represents a piece in the game of
  * chess.
